@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <style>
+      body {
+        font-family: sans-serif;
+        text-align: center;
+        padding: 40px;
+      }
+      #content { display: none; }
+      input[type="password"] {
+        padding: 10px;
+        font-size: 16px;
+      }
+      button {
+        padding: 10px 20px;
+        font-size: 16px;
+        margin-left: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Enter Password to Continue</h2>
+    <input type="password" id="pwd" placeholder="Password">
+    <button onclick="checkPassword()">Enter</button>
+
+    <div id="content">
+      <h3>✅ Access Granted</h3>
+      <p>You can now view the secret content.</p>
+    </div>
+
+    <script>
+      const correctPassword = "open123"; // Change this to your password
+
+      function checkPassword() {
+        const input = document.getElementById("pwd").value;
+        if (input === correctPassword) {
+          document.getElementById("content").style.display = "block";
+        } else {
+          alert("❌ Wrong password. Try again.");
+        }
+      }
+    </script>
+  </body>
+</html>
